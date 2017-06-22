@@ -53,7 +53,7 @@
 #define FAN_THERMO_MIN_TEMP 45
 #define FAN_THERMO_MAX_TEMP 60
 #define FAN_THERMO_THERMISTOR_PIN -1
-#define FAN_THERMO_THERMISTOR_TYPE 1
+#define FAN_THERMO_THERMISTOR_TYPE 8
 
 //#define EXTERNALSERIAL  use Arduino serial library instead of build in. Requires more ram, has only 63 byte input buffer.
 // Uncomment the following line if you are using Arduino compatible firmware made for Arduino version earlier then 1.0
@@ -80,7 +80,7 @@
 #define EXT0_X_OFFSET 0
 #define EXT0_Y_OFFSET 0
 #define EXT0_Z_OFFSET 0
-#define EXT0_STEPS_PER_MM 130
+#define EXT0_STEPS_PER_MM 96
 #define EXT0_TEMPSENSOR_TYPE 8
 #define EXT0_TEMPSENSOR_PIN TEMP_0_PIN
 #define EXT0_HEATER_PIN HEATER_0_PIN
@@ -102,9 +102,9 @@
 #define EXT0_WATCHPERIOD 1
 #define EXT0_PID_INTEGRAL_DRIVE_MAX 240
 #define EXT0_PID_INTEGRAL_DRIVE_MIN 40
-#define EXT0_PID_PGAIN_OR_DEAD_TIME 18.04
-#define EXT0_PID_I 2.44
-#define EXT0_PID_D 33.36
+#define EXT0_PID_PGAIN_OR_DEAD_TIME 13
+#define EXT0_PID_I 1
+#define EXT0_PID_D 25
 #define EXT0_PID_MAX 255
 #define EXT0_ADVANCE_K 0
 #define EXT0_ADVANCE_L 0
@@ -165,16 +165,16 @@
 #define HEATED_BED_PREHEAT_TEMP 55
 #define HEATED_BED_MAX_TEMP 120
 #define SKIP_M190_IF_WITHIN 3
-#define HEATED_BED_SENSOR_TYPE 1
+#define HEATED_BED_SENSOR_TYPE 8
 #define HEATED_BED_SENSOR_PIN TEMP_1_PIN
 #define HEATED_BED_HEATER_PIN HEATER_1_PIN
 #define HEATED_BED_SET_INTERVAL 5000
 #define HEATED_BED_HEAT_MANAGER 1
 #define HEATED_BED_PID_INTEGRAL_DRIVE_MAX 255
 #define HEATED_BED_PID_INTEGRAL_DRIVE_MIN 80
-#define HEATED_BED_PID_PGAIN_OR_DEAD_TIME   196
-#define HEATED_BED_PID_IGAIN   33
-#define HEATED_BED_PID_DGAIN 290
+#define HEATED_BED_PID_PGAIN_OR_DEAD_TIME   500
+#define HEATED_BED_PID_IGAIN   200
+#define HEATED_BED_PID_DGAIN 250
 #define HEATED_BED_PID_MAX 255
 #define HEATED_BED_DECOUPLE_TEST_PERIOD 300000
 #define MIN_EXTRUDER_TEMP 150
@@ -338,8 +338,8 @@ It also can add a delay to wait for spindle to run on full speed.
 #define DELTA_ALPHA_A 210
 #define DELTA_ALPHA_B 330
 #define DELTA_ALPHA_C 90
-#define DELTA_RADIUS_CORRECTION_A 0
-#define DELTA_RADIUS_CORRECTION_B 0
+#define DELTA_RADIUS_CORRECTION_A 0.37
+#define DELTA_RADIUS_CORRECTION_B 0.45
 #define DELTA_RADIUS_CORRECTION_C 0
 #define DELTA_DIAGONAL_CORRECTION_A 0
 #define DELTA_DIAGONAL_CORRECTION_B 0
@@ -347,13 +347,13 @@ It also can add a delay to wait for spindle to run on full speed.
 #define END_EFFECTOR_HORIZONTAL_OFFSET 0
 #define CARRIAGE_HORIZONTAL_OFFSET 0
 #define DELTA_MAX_RADIUS 110
-#define ROD_RADIUS 134.44
-#define PRINTER_RADIUS 134.44
+#define ROD_RADIUS 134.42
+#define PRINTER_RADIUS 134.42
 #define DELTA_HOME_ON_POWER 1
 #define STEP_COUNTER
 #define DELTA_X_ENDSTOP_OFFSET_STEPS 0
-#define DELTA_Y_ENDSTOP_OFFSET_STEPS 0
-#define DELTA_Z_ENDSTOP_OFFSET_STEPS 0
+#define DELTA_Y_ENDSTOP_OFFSET_STEPS 77
+#define DELTA_Z_ENDSTOP_OFFSET_STEPS 72
 #define DELTA_FLOOR_SAFETY_MARGIN_MM 80
 //#define SOFTWARE_LEVELING
 
@@ -465,20 +465,20 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 // #################### Z-Probing #####################
 
 #define Z_PROBE_Z_OFFSET 0
-#define Z_PROBE_Z_OFFSET_MODE 1
+#define Z_PROBE_Z_OFFSET_MODE 0
 #define UI_BED_COATING 1
 #define FEATURE_Z_PROBE 1
 #define EXTRUDER_IS_Z_PROBE 0
-#define Z_PROBE_BED_DISTANCE 10
+#define Z_PROBE_BED_DISTANCE 1
 #define Z_PROBE_PIN ORIG_Z_MIN_PIN
 #define Z_PROBE_PULLUP 1
-#define Z_PROBE_ON_HIGH 0
+#define Z_PROBE_ON_HIGH 1
 #define Z_PROBE_X_OFFSET -41.38
 #define Z_PROBE_Y_OFFSET -24.2
 #define Z_PROBE_WAIT_BEFORE_TEST 0
 #define Z_PROBE_SPEED 5
 #define Z_PROBE_XY_SPEED 150
-#define Z_PROBE_SWITCHING_DISTANCE 5
+#define Z_PROBE_SWITCHING_DISTANCE 2
 #define Z_PROBE_REPETITIONS 2
 #define Z_PROBE_HEIGHT 1.8
 #define Z_PROBE_START_SCRIPT "M340 P0 S700"
@@ -519,7 +519,7 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 #define SDCARDDETECTINVERTED 0
 #endif
 #define SD_EXTENDED_DIR 1 /** Show extended directory including file length. Don't use this with Pronterface! */
-#define SD_RUN_ON_STOP ""
+#define SD_RUN_ON_STOP "G28"
 #define SD_STOP_HEATER_AND_MOTORS_ON_STOP 1
 #define ARC_SUPPORT 1
 #define FEATURE_MEMORY_POSITION 1
@@ -576,7 +576,7 @@ Values must be in range 1..255
 
 #define NUM_MOTOR_DRIVERS 0
 
-
+/* 20170620 - Updated PID settings. Updated extruder stepper steps per mm. Adjusted heat bed thermistor type. */
 
 #endif
 
@@ -615,15 +615,15 @@ Values must be in range 1..255
             "invertEnable": "0",
             "acceleration": 5000,
             "watchPeriod": 1,
-            "pidP": 18.04,
-            "pidI": 2.44,
+            "pidP": 16.18,
+            "pidI": 1.56,
             "pidD": 33.36,
             "advanceK": 0,
             "advanceL": 0,
             "waitRetractTemp": 150,
             "waitRetractUnits": 0,
             "waitRetract": 0,
-            "stepsPerMM": 130,
+            "stepsPerMM": 137,
             "coolerPin": 44,
             "coolerSpeed": 255,
             "selectCommands": "",
@@ -734,8 +734,8 @@ Values must be in range 1..255
     "deltaRadiusCorrB": 0,
     "deltaRadiusCorrC": 0,
     "deltaXOffsetSteps": 0,
-    "deltaYOffsetSteps": 0,
-    "deltaZOffsetSteps": 0,
+    "deltaYOffsetSteps": 60,
+    "deltaZOffsetSteps": 70,
     "deltaSegmentsPerLine": 23,
     "stepperHighDelay": 0,
     "directionDelay": 0,
@@ -824,7 +824,7 @@ Values must be in range 1..255
     "uiExtruderRetractDistance": 3,
     "uiSpeeddependentPositioning": "1",
     "maxBedTemperature": 120,
-    "bedSensorType": 1,
+    "bedSensorType": 8,
     "bedSensorPin": "TEMP_1_PIN",
     "bedHeaterPin": "HEATER_1_PIN",
     "bedHeatManager": 1,
@@ -832,9 +832,9 @@ Values must be in range 1..255
     "bedUpdateInterval": 5000,
     "bedPidDriveMin": 80,
     "bedPidDriveMax": 255,
-    "bedPidP": 196,
-    "bedPidI": 33,
-    "bedPidD": 290,
+    "bedPidP": 302.25,
+    "bedPidI": 86.97,
+    "bedPidD": 262.62,
     "bedPidMax": 255,
     "bedDecoupleTestPeriod": 300,
     "caseLightPin": -1,
@@ -901,10 +901,10 @@ Values must be in range 1..255
     "fanThermoMinTemp": 45,
     "fanThermoMaxTemp": 60,
     "fanThermoThermistorPin": -1,
-    "fanThermoThermistorType": 1,
+    "fanThermoThermistorType": 8,
     "scalePidToMax": 0,
     "zProbePin": "ORIG_Z_MIN_PIN",
-    "zProbeBedDistance": 10,
+    "zProbeBedDistance": 5,
     "zProbePullup": "1",
     "zProbeOnHigh": "0",
     "zProbeXOffset": -41.38,
@@ -922,7 +922,7 @@ Values must be in range 1..255
     "zProbeY2": 45,
     "zProbeX3": 77.94,
     "zProbeY3": 45,
-    "zProbeSwitchingDistance": 5,
+    "zProbeSwitchingDistance": 2,
     "zProbeRepetitions": 2,
     "zProbeEveryPoint": "",
     "sdSupport": "1",
@@ -971,7 +971,7 @@ Values must be in range 1..255
     "distortionXMax": 190,
     "distortionYMin": 10,
     "distortionYMax": 190,
-    "sdRunOnStop": "",
+    "sdRunOnStop": "G28",
     "sdStopHeaterMotorsOnStop": "1",
     "featureRetraction": "1",
     "autoretractEnabled": "0",
@@ -1103,7 +1103,7 @@ Values must be in range 1..255
             "maxDistance": 20
         }
     ],
-    "manualConfig": "",
+    "manualConfig": "20170620 - Updated PID settings. Updated extruder stepper steps per mm. Adjusted heat bed thermistor type.",
     "zHomeMinTemperature": 0,
     "zHomeXPos": 999999,
     "zHomeYPos": 999999,
