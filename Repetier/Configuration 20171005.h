@@ -80,7 +80,7 @@
 #define EXT0_X_OFFSET 0
 #define EXT0_Y_OFFSET 0
 #define EXT0_Z_OFFSET 0
-#define EXT0_STEPS_PER_MM 96
+#define EXT0_STEPS_PER_MM 137
 #define EXT0_TEMPSENSOR_TYPE 8
 #define EXT0_TEMPSENSOR_PIN TEMP_0_PIN
 #define EXT0_HEATER_PIN HEATER_0_PIN
@@ -303,7 +303,7 @@ It also can add a delay to wait for spindle to run on full speed.
 #define Z_HOME_DIR 1
 #define X_MAX_LENGTH 200
 #define Y_MAX_LENGTH 200
-#define Z_MAX_LENGTH 286.98
+#define Z_MAX_LENGTH 286.87
 #define X_MIN_POS 0
 #define Y_MIN_POS 0
 #define Z_MIN_POS 0
@@ -335,7 +335,7 @@ It also can add a delay to wait for spindle to run on full speed.
 #define EXACT_DELTA_MOVES 1
 
 // Delta settings
-#define DELTA_DIAGONAL_ROD 273.93 // mm
+#define DELTA_DIAGONAL_ROD 273.53 // mm
 #define DELTA_ALPHA_A 210.4
 #define DELTA_ALPHA_B 330.27
 #define DELTA_ALPHA_C 90
@@ -348,8 +348,8 @@ It also can add a delay to wait for spindle to run on full speed.
 #define END_EFFECTOR_HORIZONTAL_OFFSET 0
 #define CARRIAGE_HORIZONTAL_OFFSET 0
 #define DELTA_MAX_RADIUS 110
-#define ROD_RADIUS 136.05
-#define PRINTER_RADIUS 136.05
+#define ROD_RADIUS 135.38
+#define PRINTER_RADIUS 135.38
 #define DELTA_HOME_ON_POWER 1
 #define STEP_COUNTER
 #define DELTA_X_ENDSTOP_OFFSET_STEPS 0
@@ -558,7 +558,7 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 #define UI_KEY_REDUCE_REPEAT 50
 #define UI_KEY_MIN_REPEAT 50
 #define FEATURE_BEEPER 1
-#define CASE_LIGHTS_PIN 45
+#define CASE_LIGHTS_PIN HEATER_2_PIN
 #define CASE_LIGHT_DEFAULT_ON 1
 #define UI_START_SCREEN_DELAY 1000
 #define UI_DYNAMIC_ENCODER_SPEED 1
@@ -579,7 +579,6 @@ Values must be in range 1..255
 
 
 #define NUM_MOTOR_DRIVERS 0
-
 
 
 #endif
@@ -627,7 +626,7 @@ Values must be in range 1..255
             "waitRetractTemp": 150,
             "waitRetractUnits": 0,
             "waitRetract": 0,
-            "stepsPerMM": 96,
+            "stepsPerMM": 137,
             "coolerPin": 44,
             "coolerSpeed": 255,
             "selectCommands": "",
@@ -710,7 +709,7 @@ Values must be in range 1..255
     "zMinPos": 0,
     "xLength": 200,
     "yLength": 200,
-    "zLength": 286.98,
+    "zLength": 286.87,
     "alwaysCheckEndstops": "1",
     "disableX": "0",
     "disableY": "0",
@@ -724,8 +723,8 @@ Values must be in range 1..255
     "zEndstopBack": 5,
     "deltaSegmentsPerSecondPrint": 180,
     "deltaSegmentsPerSecondTravel": 70,
-    "deltaDiagonalRod": 273.93,
-    "deltaHorizontalRadius": 136.05,
+    "deltaDiagonalRod": 273.53,
+    "deltaHorizontalRadius": 135.38,
     "deltaAlphaA": 210.4,
     "deltaAlphaB": 330.27,
     "deltaAlphaC": 90,
@@ -841,7 +840,7 @@ Values must be in range 1..255
     "bedPidD": 262.62,
     "bedPidMax": 255,
     "bedDecoupleTestPeriod": 300,
-    "caseLightPin": 45,
+    "caseLightPin": "HEATER_2_PIN",
     "caseLightDefaultOn": "1",
     "bedSkipIfWithin": 3,
     "gen1T0": 25,
@@ -1108,7 +1107,7 @@ Values must be in range 1..255
             "maxDistance": 20
         }
     ],
-    "manualConfig": "",
+    "manualConfig": "20170620 - Updated PID settings. Updated extruder stepper steps per mm. Adjusted heat bed thermistor type.",
     "zHomeMinTemperature": 0,
     "zHomeXPos": 999999,
     "zHomeYPos": 999999,
