@@ -165,7 +165,7 @@
 #define HEATED_BED_PREHEAT_TEMP 55
 #define HEATED_BED_MAX_TEMP 120
 #define SKIP_M190_IF_WITHIN 3
-#define HEATED_BED_SENSOR_TYPE 8
+#define HEATED_BED_SENSOR_TYPE 4
 #define HEATED_BED_SENSOR_PIN TEMP_1_PIN
 #define HEATED_BED_HEATER_PIN HEATER_1_PIN
 #define HEATED_BED_SET_INTERVAL 5000
@@ -335,7 +335,7 @@ It also can add a delay to wait for spindle to run on full speed.
 #define EXACT_DELTA_MOVES 1
 
 // Delta settings
-#define DELTA_DIAGONAL_ROD 273.93 // mm
+#define DELTA_DIAGONAL_ROD 271 // mm
 #define DELTA_ALPHA_A 210.4
 #define DELTA_ALPHA_B 330.27
 #define DELTA_ALPHA_C 90
@@ -347,8 +347,8 @@ It also can add a delay to wait for spindle to run on full speed.
 #define DELTA_DIAGONAL_CORRECTION_C 0
 #define END_EFFECTOR_HORIZONTAL_OFFSET 0
 #define CARRIAGE_HORIZONTAL_OFFSET 0
-#define DELTA_MAX_RADIUS 110
-#define ROD_RADIUS 136.05
+#define DELTA_MAX_RADIUS 116
+#define ROD_RADIUS 134.4
 #define PRINTER_RADIUS 136.05
 #define DELTA_HOME_ON_POWER 1
 #define STEP_COUNTER
@@ -532,11 +532,11 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 #define FEATURE_FAN2_CONTROL 0
 #define FEATURE_CONTROLLER 2
 #define ADC_KEYPAD_PIN -1
-#define LANGUAGE_EN_ACTIVE 1
+#define LANGUAGE_EN_ACTIVE 0
 #define LANGUAGE_DE_ACTIVE 0
 #define LANGUAGE_NL_ACTIVE 0
 #define LANGUAGE_PT_ACTIVE 0
-#define LANGUAGE_IT_ACTIVE 0
+#define LANGUAGE_IT_ACTIVE 1
 #define LANGUAGE_ES_ACTIVE 0
 #define LANGUAGE_FI_ACTIVE 0
 #define LANGUAGE_SE_ACTIVE 0
